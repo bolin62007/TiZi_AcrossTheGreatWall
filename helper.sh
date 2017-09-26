@@ -1,5 +1,8 @@
 mkdir vpninstall && cd vpninstall
-apt-get update && apt-get -y install vim libssl-dev curl wget gcc && wget https://raw.githubusercontent.com/XetRAHF/setup-simple-pptp-vpn/master/setup.sh && sh setup.sh -u zxz -p 1234567890
+apt-get update  
+apt-get -y install vim libssl-dev curl wget gcc
+wget https://raw.githubusercontent.com/XetRAHF/setup-simple-pptp-vpn/master/setup.sh
+sh setup.sh -u zxz -p 1234567890
 rm -rf setup.sh
 service pptpd restart
 echo PPTP setup Finished
