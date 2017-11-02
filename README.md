@@ -1,4 +1,12 @@
-# 科学上网的最终秘籍
+# 科学上网的最终秘籍（最详细的说明）
+## 关于喝茶
+* 如果喜欢就`follow`我吧，多谢🙏
+* 请不要在`issue`里面谈论`政治`
+* 如果您对认为文章有(malicious suspect)，请`issue`通知我
+* 如果文章里面的链接失效，请`issue`
+* 如果我被请去喝茶了，请`fork`走
+![滑稽](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1509657102720&di=26897a14c32e3b7125d72a9ee4a6571f&imgtype=0&src=http%3A%2F%2Fimg.alicdn.com%2Fimgextra%2Fi2%2F2242406473%2FTB2o2RgahvC11Bjy1zdXXXPcVXa_%2521%25212242406473.jpg)
+
 ## 致谢
 * Shadowsocks 和 ShadowsocksR作者
 ![Shadowsock Logo](https://raw.githubusercontent.com/XetRAHF/TiZi_AcrossTheGreatWall/d1f812d0caabe9c0d4a4b7d9e456ef46671f2729/imgs/shadowsocks.png)
