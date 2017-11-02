@@ -12,11 +12,30 @@
 ![Shadowsock Logo](https://raw.githubusercontent.com/XetRAHF/TiZi_AcrossTheGreatWall/d1f812d0caabe9c0d4a4b7d9e456ef46671f2729/imgs/shadowsocks.png)
 
 ## 选翻墙服务器
+* 不要选择基于OpenVZ内核的服务器提供商（瑞速不支持这个）（当然如果您听不懂可以忽略掉）
+* 首推三家知名服务商：
+	* DigitalOcean: `https://www.digitalocean.com/`
+	* Vultr: `https://www.vultr.com`
+	* Linode: `https://www.linode.com`
+
+* 然后是日本的服务商：
+	* 维基百科地址： `https://romanrm.net/vps/japan`
+
+* 美国的服务商：
+	* CloudWays: `www.cloudways.com`
 
 ## 买翻墙服务器
+* 你需要一张信用卡（如果你没有你可以使用`Global cash全球付`, 或者使用汇率飞起的淘宝虚拟信用卡）
+* 你需要为每个月准备至少5美元，或10美元（已经很低了，减减肥，就省出来了）
 
 ## 配置翻墙服务器
 ### 启动服务器
+* 推荐配置
+	* CPU：一个核心足以
+	* 内存：512即可
+	* 硬盘：10G以上即可
+	* 推荐系统：CentOS 6 x64
+	* 推荐内核(kernel)版本：4.4.0-x86-64
 ### 更换服务器内核
 ```
 wget http://ftp.scientificlinux.org/linux/scientific/6.6/x86_64/updates/security/kernel-2.6.32-504.3.3.el6.x86_64.rpm
@@ -26,7 +45,15 @@ reboot
 ### 启动瑞速
 ### 安装Docker
 
+### 保证服务器稳定性
+* 你需要至少两个服务器，才能保证你的上网体验
+* 所以再部署一个服务器吧
+* 不要认为给一个服务器上加两个ip地址就可以了，防火长城进行封锁会导致整个区域断线，而不只是你的ip断线。所以你应该换一个地区创建第二个服务器。
+* （高手专用）因为shadowsocks支持监听服务器所有地址（VPN不支持）所以你可以给服务器做一个快照（如果到这里你还读不懂的话，就忽略掉吧），然后再第二个服务器山复原快照，但是你仍然需要为第二个服务器手动更换内核，安装瑞速，启动容器，并进入每一个Docker容器开启SSR服务
+
 ## 配置翻墙服务器防火墙（高手装用，非必需）
+
+
 
 # 服务器配置好了，我们现在在电脑上配置全局翻墙
 ## 手机
@@ -117,6 +144,8 @@ env http_proxy=http://127.0.0.1:1087
 * 使用QQ群分享服务器给好朋友：（同学，qq群不算用户隐私，会被查的）
 * 只搭建一个梯子服务器：即使你的服务器是SSR加密等级非常高，甚至是嵌套SSR，你也需要准备两个以上的梯子服务器，因为出口线路也会发生不稳定的情况
 * 卖SSR以及其他翻墙服务器：（后果极为严重，请大家不要尝试）`http://www.ajxxgk.jcy.cn/html/20170419/2/5261188.html`
+* 不要在Azure中国（由世纪互联运营）上搭建翻墙服务器，会被查水表
+* 不要使用AWS和Google Cloud等(Pay as you Go)的服务器提供商上搭建梯子（当然，如果您是土豪的话是可以的）那里的流量是按照GB计费的，非常贵
 
 ## 原理问题：
 * Shadowsocks与VPN之间的关系：
