@@ -1,4 +1,6 @@
 # 科学上网的最终秘籍（最详细的说明）
+> 还在努力编写中, 欢迎大家一起来帮忙
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 ## 关于喝茶
 * 如果喜欢就`follow`我吧，多谢🙏
 * 请不要在`issue`里面谈论`政治`
@@ -10,6 +12,7 @@
 ## 致谢
 * Shadowsocks 和 ShadowsocksR作者
 ![Shadowsock Logo](https://raw.githubusercontent.com/XetRAHF/TiZi_AcrossTheGreatWall/d1f812d0caabe9c0d4a4b7d9e456ef46671f2729/imgs/shadowsocks.png)
+* 所有参与编写的志愿者
 
 ## 选翻墙服务器
 * 不要选择基于OpenVZ内核的服务器提供商（瑞速不支持这个）（当然如果您听不懂可以忽略掉）
