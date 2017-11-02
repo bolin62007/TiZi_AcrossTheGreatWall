@@ -1,6 +1,6 @@
 # 科学上网的最终秘籍
 
-## 给常用的程序上代理
+## 给常用的程序上代理（程序员）
 * GIT:
 `git config --global http.proxy 'socks5://127.0.0.1:1086'`
 * Node Package Manager(NPM):
