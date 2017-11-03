@@ -82,6 +82,8 @@ reboot
 
 # 用Proxifier将我们的ShadowsocksR转换为VPN模式
 > 此时ShadowsocksR就和VPN一样了
+## Proxifier 官网
+[Proxifier](https://www.proxifier.com)
 
   
     
@@ -106,6 +108,19 @@ env http_proxy=http://127.0.0.1:1087
 	* `ssh root@目标ip -o "ProxyCommand=nc -X 5 -x 127.0.0.1:1086 %h %p`
 * Homebrew:
 	* `export ALL_PROXY="127.0.0.1:1087"`
+* Cocoapods:
+	* Cocoapods基于Git与curl(系统代理设置)，你需要给git上代理然后
+	```
+	export HTTP_PROXY=http://127.0.0.1:1087
+	export HTTPS_PROXY=http://127.0.0.1:1087
+	env http_proxy=http://127.0.0.1:1087
+	```
+* PyPi: 
+```
+export HTTP_PROXY=http://127.0.0.1:1087
+export HTTPS_PROXY=http://127.0.0.1:1087
+```
+
 
 ## 为什么这样做是最好的翻墙方案：
 * 为什么不使用VPN：
