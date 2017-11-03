@@ -83,10 +83,8 @@ reboot
 # 用Proxifier将我们的ShadowsocksR转换为VPN模式
 > 此时ShadowsocksR就和VPN一样了
 ## Proxifier 官网
-[Proxifier](https://www.proxifier.com)
+[Proxifier(把你的shadowsocksR转换成为VPN)](https://www.proxifier.com)
 
-  
-    
 ### 给常用的程序上代理（程序员）
 > 如果您使用proxifier最好也还是再配置代理，那样会更稳
 
@@ -171,6 +169,11 @@ export HTTPS_PROXY=http://127.0.0.1:1087
 
 * Shadowsocks与ShadowsocksR的关系：
 	* 参考：[Shadowsocks与ShadowsocksR的关系](https://www.librehat.com/about-shadowsocks-r-and-the-security-of-shadowsocks/)
+
+
+## 基于OpenWRT的路由器
+> 推荐架构
+
 
 ## 最后祝大家办公愉快
 ```
