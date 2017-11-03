@@ -45,8 +45,47 @@ wget http://ftp.scientificlinux.org/linux/scientific/6.6/x86_64/updates/security
 rpm -ivh kernel-2.6.32-504.3.3.el6.x86_64.rpm --force
 reboot
 ```
+### 安装瑞速
+* 为什么：这个东西能使你原本与服务器连接只有300KBs的速度提升到60M以上
+* 怎么做：
+```
+wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeser_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh install
+```
+软件会询问你一些事情，全部选择y
+* 原理是什么：[TCP抗堵塞原理](https://cloudplatform.googleblog.com/2017/07/TCP-BBR-congestion-control-comes-to-GCP-your-Internet-just-got-faster.html)
+* 更多文献：
+	* 瑞速库地址：https://github.com/91yun/serverspeeder
+* (高手专用)
+	* 您当然也可以使用google bbr，但是根据我们的测试，使用瑞速更稳定，如果您选择使用BBR而不是瑞速那么请参考下列文章
+		* [Vultr官方：在CentOS上安装Google BBR](https://www.vultr.com/docs/how-to-deploy-google-bbr-on-centos-7)
+
+	
 ### 启动瑞速
+```
+/appex/bin/serverSpeeder.sh restart
+```
+
 ### 安装Docker
+* 为什么：
+	* 我们需要运行两个SSR容器，这样我们就可以有两个服务器端口用作SSR服务
+	* 不建议使用docker的shadowsocksr镜像
+	
+* 怎么做：
+```
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+```
+### 部署两个Docker SSR容器
+* 怎么做：
+```
+docker run --name shadowsock1 -p 443:8989 -ti centos:6 /bin/bash
+docker run --name shadowsock2 -p 80:8989 -ti centos:6 /bin/bash
+```
+### 安装并启动两个SSR容器
+* 使用`docker ps -a`查看你的containerID
+
 
 ### 保证服务器稳定性
 * 你需要至少两个服务器，才能保证你的上网体验
@@ -229,39 +268,6 @@ Severspeeder:
 
             /etc/init.d/shadowsocks-r restart
 
-        docker run --name shadowsock3 -p 20:8989 -ti centos:6 /bin/bash
-            yum update -y && yum install -y wget net-tools vim
-            wget https://raw.githubusercontent.com/XetRAHF/shadowsocks_install/master/shadowsocks-all.sh
-            bash ./shadowsocks-all.sh
-            vi /etc/rc.local 
-            > Appending following lines to the end of file:
-                echo 3 > /proc/sys/net/ipv4/tcp_fastopen
-            
-            vi /etc/sysctl.conf
-            > Appending following lines to the end of file:
-                net.ipv4.tcp_fastopen = 3
-            
-            vi /etc/shadowsocks-r/config.json
-            > Change to true enable fast open
-
-            /etc/init.d/shadowsocks-r restart
-
-        docker run --name shadowsock4 -p 21:8989 -ti centos:6 /bin/bash
-            yum update -y && yum install -y wget net-tools vim
-            wget https://raw.githubusercontent.com/XetRAHF/shadowsocks_install/master/shadowsocks-all.sh
-            bash ./shadowsocks-all.sh
-            vi /etc/rc.local 
-            > Appending following lines to the end of file:
-                echo 3 > /proc/sys/net/ipv4/tcp_fastopen
-            
-            vi /etc/sysctl.conf
-            > Appending following lines to the end of file:
-                net.ipv4.tcp_fastopen = 3
-            
-            vi /etc/shadowsocks-r/config.json
-            > Change to true enable fast open
-
-            /etc/init.d/shadowsocks-r restart
         
     Test it before use it!
         docker exec -ti e763b2ab011a /bin/bash
